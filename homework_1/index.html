@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="box">
+      <h2 class="box-title">
+        Uniquely <a href="#"><span>enable</span> goal-oriented</a>
+      </h2>
+    </div>
+
+    <div class="block">
+      <div>
+        <ul>
+          <span class="mark">span</span>
+        </ul>
+      </div>
+    </div>
+
+    <main>
+      <article>
+        <section>
+          <div>
+            <nav>
+              <a href="#"><span>Goal!</span></a>
+            </nav>
+          </div>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
+
+<!-- 3. яким має бути html код, щоб працював селектор .block div ul span.mark  -->
+
+<div class="block">
+  <div>
+    <ul>
+      <span class="mark"></span>
+    </ul>
+  </div>
+</div>
+
+<!-- 4. зверніться до елемента span через селектори всіх батьківських елементів. Яка вага буде у такого селектора? Якої помилки припустилися в коді? -->
+
+<body>
+  <main>
+    <article>
+      <section>
+        <div>
+          <nav>
+            <a href="#"><span>Goal!</span></a>
+          </nav>
+        </div>
+      </section>
+    </article>
+  </main>
+</body>
+
+ошибка была в елементе див под section
+только я не понял как ее надо исправить, было 3 варианта
+просто удалить 1 открывающий див див
+удалить всю строку с дивами
+удалить один открывающий див и обернуть в него nav
+я решил сделать 3 вариант

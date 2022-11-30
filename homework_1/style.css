@@ -1,0 +1,52 @@
+div .box h2 a span {
+  color: red;
+}
+/* див и .box - это один елемент, поэтому пишем без пробела.
+   такая запись должна быть::
+   div.box h2 a span
+   выберется span
+*/
+
+.box h2 span a {
+  color: green;
+}
+/*
+Перепутан порядок span и a
+в спане нет а, наоборот, спан внутри а
+=> следует поменять их местами
+.box h2 a span
+*/
+
+.box a span {
+  color: black;
+}
+
+.block div ul span.mark {
+  color: rgb(46, 201, 92);
+}
+
+body main article section div nav a span {
+  color: aqua;
+}
+
+/*
+так как у нас валидный только 1 селектор, он и сработает
+*/
+
+/*
+если б были валидны все 3 типо так:
+
+div.box h2 a span {
+
+}
+
+.box h2 a span {
+
+}
+
+.box a span {
+
+}
+
+то сработает первый, так как у него самый большой вес
+*/
