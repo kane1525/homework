@@ -1,0 +1,51 @@
+/* С соотношениями я не прям сильно заморачивался, но заморочился, что б на любом экране в любом формате (книжном, альбомном) всё выглядело четенько) */
+/* В задании там где нужно найти зайвый, ответ: {left: 0; bottom:10px} */
+/* я делал по фотке, но на глаз, только когда доделал, понял, что можно фотку наложить на екран с помощью перфект пиксель, и сделать хотяб начальное соотношение четко */
+/* но делать этого я конечно же не стал)) */
+/* если это обязательно, напишите, я сделаю) */
+
+.section {
+  height: 100vh;
+  background-color: #f5fcff;
+  position: relative;
+  overflow: hidden;
+}
+
+.sun {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: clamp(150px, 27vmin, 250px);
+}
+
+.clouds {
+  position: absolute;
+  top: clamp(0px, 7vmin, 65px);
+  width: 100%;
+  height: clamp(62px, 20vmin, 175px);
+  background-image: url(../img/cloud.png);
+  background-position: top;
+  background-size: contain;
+  background-repeat: repeat-x;
+  z-index: 1;
+}
+
+.cat {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: clamp(150px, 30vmin, 283px);
+}
+
+.grass {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: clamp(100px, 20vmin, 160px);
+  background-image: url(../img/grass.png);
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: repeat-x;
+  z-index: 1;
+}
