@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1 class="form-title">Please fill out the form below</h1>
+    <form class="form">
+      <!-- About yourself -->
+      <div class="input-wrapper form__input-wrapper">
+        <label for="name" class="input-wrapper__label">Full name</label>
+        <input type="text" id="name" name="name" class="input-wrapper__input" />
+      </div>
+
+      <div class="input-wrapper form__input-wrapper">
+        <label for="email" class="input-wrapper__label"
+          >Your e-mail address</label
+        >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="input-wrapper__input"
+        />
+      </div>
+
+      <div class="input-wrapper form__input-wrapper">
+        <label for="phone" class="input-wrapper__label"
+          >Your phone number</label
+        >
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          class="input-wrapper__input"
+        />
+      </div>
+
+      <div class="input-wrapper form__input-wrapper">
+        <label for="country" class="input-wrapper__label"
+          >Select your country</label
+        >
+        <div class="styled-select">
+          <select id="country" name="country" class="input-wrapper__input">
+            <option value="UK" selected>UK</option>
+            <option value="Ukraine">Ukraine</option>
+            <option value="USA">USA</option>
+            <option value="Italy">Italy</option>
+          </select>
+          <span class="fa fa-sort-desc" aria-hidden="true"></span>
+        </div>
+      </div>
+      <!-- End of About yourself -->
+
+      <!-- Attend -->
+      <fieldset class="form__fieldset">
+        <legend class="radios-title">I want to attend event</legend>
+
+        <div
+          class="input-wrapper form__input-wrapper form__input-wrapper_radio"
+        >
+          <input
+            type="radio"
+            id="online"
+            name="attend-event"
+            class="input-wrapper__input input-wrapper__input_radio"
+          />
+          <label
+            for="online"
+            class="input-wrapper__label input-wrapper__label_radio"
+            >online</label
+          >
+        </div>
+
+        <div
+          class="input-wrapper form__input-wrapper form__input-wrapper_radio"
+        >
+          <input
+            type="radio"
+            id="offline"
+            name="attend-event"
+            class="input-wrapper__input input-wrapper__input_radio"
+          />
+          <label
+            for="offline"
+            class="input-wrapper__label input-wrapper__label_radio"
+            >offline</label
+          >
+        </div>
+      </fieldset>
+      <!-- End of Attend -->
+
+      <!-- Comments -->
+      <div
+        class="input-wrapper form__input-wrapper form__input-wrapper_textarea"
+      >
+        <label for="comments" class="input-wrapper__label">Сomments</label>
+        <textarea
+          name="comments"
+          id="comments"
+          class="input-wrapper__input input-wrapper__input_textarea"
+          rows="3"
+        ></textarea>
+      </div>
+      <!-- End of Comments -->
+
+      <!-- Privacy -->
+      <div
+        class="input-wrapper form__input-wrapper form__input-wrapper_checkbox"
+      >
+        <input
+          type="checkbox"
+          class="input-wrapper__input input-wrapper__input_checkbox"
+          name="policy"
+          id="checkbox"
+        />
+        <label
+          class="input-wrapper__label input-wrapper__label_checkbox"
+          for="checkbox"
+        >
+          <p>I agree with <a href="#">the privacy policy</a></p>
+          <!-- Тут у меня вопрос, нормально ли заворачивать в п, или есть лучший способ? -->
+        </label>
+      </div>
+      <!-- End of Privacy -->
+
+      <!-- Form Btns -->
+      <div class="form__btns">
+        <input type="reset" class="btn" value="Clear form" />
+        <input type="submit" class="btn btn_black" value="Submit form" />
+      </div>
+      <!-- End of form Btns -->
+    </form>
+  </body>
+</html>

@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+/* Common styles */
+:root {
+  --bigger-fz: 24px;
+  --light-grey: #e6e6e6;
+  --medium-grey: #808080;
+  --dark-grey: #5c5c5c;
+}
+
+body {
+  font-family: 'Roboto', serif;
+  font-size: 20px;
+  color: #000;
+  padding: 50px 10px 78px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+/* End of Common styles */
+
+/* Common table styles */
+.form {
+  max-width: 800px;
+  margin: 0 auto; /*------- удалить что б было как на макете -------*/
+}
+
+.form-title {
+  font-size: 32px;
+  color: #000000;
+  margin-bottom: 57px;
+  text-align: center; /*------- удалить что б было как на макете -------*/
+}
+
+/* label + input */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* label + input position */
+.form__input-wrapper {
+  margin-bottom: 40px;
+}
+/* предположим, я хочу переиспользовать инпут враппер в другой форме, поэтому в этой позиционирую его отдельно, относительно данной формы form) */
+/* делал так еще с некоторыми елементами))  */
+
+/* label */
+.input-wrapper__label {
+  margin-bottom: 10px;
+}
+
+/* input */
+.input-wrapper__input {
+  width: 100%;
+  min-height: 60px;
+  border-radius: 8px;
+  background-color: var(--light-grey);
+  border: 2px solid var(--medium-grey);
+  font-size: var(--bigger-fz);
+  padding: 14px 22px;
+}
+/* End of Common table styles */
+
+/* Select */
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.styled-select {
+  position: relative;
+}
+
+.fa,
+.fa-sort-desc {
+  pointer-events: none;
+}
+
+.fa-sort-desc {
+  position: absolute;
+  font-size: var(--bigger-fz);
+  right: 22px;
+  top: 50%;
+  transform: translateY(calc(-50% - 4.5px));
+  color: var(--medium-grey);
+}
+/* End of select */
+
+/* Radio buttons */
+.form__fieldset {
+  margin-bottom: 40px;
+}
+
+.radios-title {
+  font-size: var(--bigger-fz);
+  color: #000000;
+  margin-bottom: 31px;
+}
+
+.form__input-wrapper_radio {
+  margin-bottom: 12px;
+}
+
+.form__input-wrapper_radio:last-child {
+  margin-bottom: 0;
+}
+
+.input-wrapper__input_radio {
+  all: initial;
+  position: absolute;
+  opacity: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.input-wrapper__label_radio {
+  margin-bottom: 0;
+  display: flex;
+
+  margin-top: 5px;
+  /* что то типо маленького костыля для центровки текста и радио, он из 2 частей */
+  /* 1 часть костыля */
+  /* сдвигаем радио и текст на 5пх вниз */
+}
+
+.input-wrapper__label_radio::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--medium-grey);
+  background-color: var(--light-grey);
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  z-index: 1;
+
+  margin-top: -5px;
+  /* 2 часть костыля */
+  /* возвращаем точку назад на 5px вверх */
+  /* Если у обертки инпута и лейбла дисплей флекс, этих 2 строк достаточно, ведет себя идеально */
+  /* Сначала дал обертке дисплей блок но там костыль из 4 частей, что б работало хорошо, а с флексом получилось из 2 строк */
+  /* но вроде с дисплей блок еще лучше повидение */
+
+  /* итог костыля: общий поток документа не нарушен, так же все расстояния внутри блока идеально можно контролировать*/
+  /* так же проверил на большой текст, все четенько и проверил общую высоту блока с костылем и без, одинаковая, хотя четко не задана */
+}
+
+.input-wrapper__label_radio::after {
+  content: '';
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: var(--light-grey);
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  left: 6px;
+  top: 6px;
+  z-index: 2;
+}
+
+.input-wrapper__input_radio:checked + .input-wrapper__label_radio::after {
+  background: var(--medium-grey);
+}
+
+.input-wrapper__label_radio:hover::before {
+  border: 2px solid var(--dark-grey);
+}
+
+.input-wrapper__input_radio:checked + .input-wrapper__label_radio:hover::after {
+  background: var(--dark-grey);
+}
+/* End of Radio buttons */
+
+/* Textarea */
+.form__input-wrapper_textarea {
+  margin-bottom: 22px;
+}
+
+.input-wrapper__input_textarea {
+  resize: none;
+  height: auto;
+  padding: 6px 22px;
+}
+/* End of Textarea */
+
+/* Checkbox */
+.input-wrapper__input_checkbox {
+  all: initial;
+  position: absolute;
+  opacity: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.input-wrapper__label_checkbox {
+  margin-bottom: 0;
+  display: flex;
+  margin-top: 5px;
+}
+
+.input-wrapper__label_checkbox::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--medium-grey);
+  background-color: var(--light-grey);
+  display: inline-block;
+  border-radius: 8px;
+  margin-right: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  z-index: 1;
+  margin-top: -5px;
+}
+
+.input-wrapper__label_checkbox::after {
+  content: '';
+  width: 18px;
+  height: 9px;
+  display: inline-block;
+  border-left: 3px solid;
+  border-bottom: 3px solid;
+  color: var(--medium-grey);
+  background-color: transparent;
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  cursor: pointer;
+  z-index: 2;
+  transform: rotate(-45deg) scale(0);
+}
+
+.input-wrapper__label_checkbox:hover::before {
+  border: 2px solid var(--dark-grey);
+}
+
+.input-wrapper__input_checkbox:checked + .input-wrapper__label_checkbox::after {
+  transform: rotate(-45deg) scale(1);
+}
+
+.input-wrapper__input_checkbox:checked:hover
+  + .input-wrapper__label_checkbox::after {
+  color: var(--dark-grey);
+}
+
+/* End of Checkbox */
+
+/* Buttons */
+.form__btns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.btn {
+  width: 360px;
+  min-height: 75px;
+  padding: 23.5px 40px;
+  border-radius: 8px;
+  background-color: var(--light-grey);
+  border: none;
+  font-size: var(--bigger-fz);
+  color: var(--medium-grey);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #dadada;
+  color: #6e6e6e;
+}
+
+.btn_black {
+  background-color: #000000;
+  border: 0px solid var(--medium-grey);
+  color: #ffffff;
+}
+
+.btn_black:hover {
+  background-color: #3d3d3d;
+  color: #ffffff;
+}
+/* End of Buttons */
